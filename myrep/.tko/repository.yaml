@@ -1,12 +1,5 @@
 version: '0.2'
 sources:
-- database: database
-  link: ''
-  type: remote
-  branch: master
-  cache_path: ''
-  cache_timestamp: ''
-  filters: []
 - database: local
   link: ''
   type: local
@@ -14,7 +7,17 @@ sources:
   cache_path: ''
   cache_timestamp: ''
   filters: null
-expanded: []
+- database: poo
+  link: C:\Users\Vinicius Nogueira\poo-rc-bloco-c-vnogueiraa47\myrep\.tko\cache\poo\Readme.md
+  type: clone
+  branch: master
+  cache_path: C:\Users\Vinicius Nogueira\poo-rc-bloco-c-vnogueiraa47\myrep\.tko\cache\poo\Readme.md
+  cache_timestamp: '2025-11-01 14:50:14'
+  filters:
+  - listas
+expanded:
+- poo@campanha-principal
+- poo@bloco_c-listas
 tasks: {}
 flags:
   quests: 0
@@ -23,4 +26,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: ''
+selected: poo@budega

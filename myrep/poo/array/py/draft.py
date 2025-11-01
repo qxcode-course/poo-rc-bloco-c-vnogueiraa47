@@ -1,0 +1,1 @@
+L = []  #array nao preenchido
