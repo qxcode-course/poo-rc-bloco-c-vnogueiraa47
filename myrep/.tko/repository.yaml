@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\Vinicius Nogueira\poo-rc-bloco-c-vnogueiraa47\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-01 14:50:14'
+  cache_timestamp: '2025-11-04 10:30:42'
   filters:
   - listas
 expanded:
@@ -26,4 +26,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@budega
+selected: poo@array
