@@ -12,13 +12,14 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\Vinicius Nogueira\poo-rc-bloco-c-vnogueiraa47\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-04 10:30:42'
+  cache_timestamp: '2025-11-10 09:17:43'
   filters:
   - listas
 expanded:
 - poo@campanha-principal
 - poo@bloco_c-listas
-tasks: {}
+tasks:
+  poo@array: '{rate:100, human:SIM, guide:SIM, alone:10, study:40}'
 flags:
   quests: 0
   tracks: 0
@@ -26,4 +27,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@array
+selected: poo@budega
