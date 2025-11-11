@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-10_22-51-51",
+            "content": "@@ -1515,18 +1515,16 @@\n     line\n- =\n  input()\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_22-56-09",
+            "content": "@@ -1719,26 +1719,26 @@\n arket(int(ar\n-g\n s\n+g\n %5B1%5D))%0A      \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_22-56-30",
+            "content": "@@ -255,17 +255,18 @@\n f.caixas\n-:\n+ =\n  list%5B C\n@@ -304,17 +304,18 @@\n f.espera\n-:\n+ =\n  list %5B \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_22-58-02",
+            "content": "@@ -1310,17 +1310,16 @@\n se %22----\n--\n %22 for x \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_22-58-26",
+            "content": "@@ -1820,14 +1820,13 @@\n == %22\n-arrive\n+enter\n %22:%0A \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_23-00-06",
+            "content": "@@ -1877,17 +1877,16 @@\n te = Cli\n-e\n nte(nome\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_23-00-32",
+            "content": "@@ -1920,17 +1920,17 @@\n ter(clin\n-t\n+r\n e)%0A     \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_23-00-45",
+            "content": "@@ -1915,25 +1915,24 @@\n il.enter(cli\n-e\n nte)%0A       \n@@ -2122,23 +2122,23 @@\n l.finish(ind\n-i\n+u\n ce)%0Amain()\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_23-01-01",
+            "content": "@@ -126,33 +126,32 @@\n me%0A    %0A    def \n-_\n _str__(self):%0A  \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_23-02-14",
+            "content": "@@ -2052,16 +2052,17 @@\n and == %22\n+ \n finish%22:\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_23-06-51",
+            "content": "@@ -687,25 +687,24 @@\n print(%22fail:\n- \n caixa ocupad\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_23-07-11",
+            "content": "@@ -1009,31 +1009,22 @@\n nt('\n-fail: caixa inexistente\n+index invalido\n ')%0A \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-10_23-07-51",
+            "content": "class Cliente:\n    def __init__(self, nome: str):\n        self.__nome = nome\n\n    def getNome(self):\n        return self.__nome\n    \n    def __str__(self):\n        return self.__nome\n    \nclass Market:\n    def __init__(self, qtdeCaixas: int ):\n        self.caixas: list[ Cliente | None] = []\n        self.espera: list [ Cliente ] = []\n        for _ in range(qtdeCaixas):\n            self.caixas.append(None)\n    \n    def enter(self, cliente: Cliente):\n        self.espera.append(cliente)\n    \n    def call(self, index: int):\n        if index < 0 or index >= len(self.caixas):\n            print(\"index invalido\")\n            return\n        if self.caixas[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n        if len(self.espera) == 0:\n            print(\"fail: sem clientes\")\n            return\n        \n        self.caixas[index] = self.espera[0]\n        del self.espera[0]\n\n    def finish(self, index: int):\n        if index < 0 or index >= len(self.caixas):\n            print('fail: caixa inexistente')\n            return None\n        if self.caixas[index] is None:\n            print(\"fail: caixa vazio\")\n            return None\n        aux = self.caixas[index]\n        self.caixas[index] = None\n        return aux\n    \n    def __str__(self):\n        caixas = \", \".join([str(x) if x else \"-----\" for x in self.caixas])\n        espera = \", \".join([str(x) for x in self.espera])\n        return f\"Caixas: [{caixas}]\\nEspera: [{espera}]\"\n\ndef main():\n    mercantil = None\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n        command = args[0]\n\n        if command == \"end\":\n            break\n        elif command == \"init\":\n            mercantil = Market(int(args[1]))\n        elif command == \"show\":\n            print(mercantil)\n        elif command == \"arrive\":\n            nome = args[1]\n            cliente = Cliente(nome)\n            mercantil.enter(cliente)\n        elif command == \"call\":\n            indice = int(args[1])\n            mercantil.call(indice)\n        elif command == \"finish\":\n            indice = int(args[1])\n            mercantil.finish(indice)\nmain()",
+            "lines": "76"
+        }
+    ]
+}
