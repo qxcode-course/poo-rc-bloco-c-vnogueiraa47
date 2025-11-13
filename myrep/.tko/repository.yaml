@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\Vinicius Nogueira\poo-rc-bloco-c-vnogueiraa47\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-10 22:54:54'
+  cache_timestamp: '2025-11-12 21:19:37'
   filters:
   - listas
 expanded:
@@ -22,10 +22,10 @@ tasks:
   poo@array: '{rate:100, human:SIM, guide:SIM, alone:10, study:40}'
   poo@budega: '{rate:100, iagen:SIM, guide:SIM, alone:10, study:180}'
 flags:
-  quests: 0
+  quests: 2
   tracks: 0
   tasks: 0
-  graph: 0
+  graph: 1
   xray: 0
 lang: py
 selected: poo@budega
