@@ -2,8 +2,108 @@
     "patches": [
         {
             "label": "2025-11-15_08-45-41",
-            "content": "class Kid:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n\n    def __str__(self):\n        return f\"{self.__nome}:{self.__idade}\"\n\nclass Jump:\n    def __init__(self):\n        self.fila: list[Kid] = []\n        self.pula: list[Kid] = []\n        \n    def arriver(self, kid:Kid):\n        self.fila.append(kid)\n\n    def __str__(self):\n        fila = \", \".join([str(x) for x in self.fila])\n        pula = \", \".join([str(x) for x in self.pula])\n        return f\"[{fila}] => [{pula}]\"\n    \n    def enter(self):\n        cld = self.fila.pop(0)\n        self.pula.append(cld)",
+            "content": "@@ -306,16 +306,17 @@\n f arrive\n+r\n (self, k\n@@ -324,16 +324,16 @@\n d:Kid):%0A\n-\n         \n@@ -574,32 +574,32 @@\n elf.fila.pop(0)%0A\n+\n         self.pul\n@@ -615,816 +615,4 @@\n cld)\n-%0A%0A    def leave(self):%0A        cld = self.pula.pop(0)%0A        self.fila.append(cld)%0A%0A    def remove(self,cld: str):%0A        cld = self.fila.remove(cld)%0A%0Adef main():%0A    pula = Jump()%0A%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split()%0A        command = args%5B0%5D%0A%0A        if command == %22end%22:%0A            break%0A        elif command == %22show%22:%0A            print(pula)%0A        elif command == %22arrive%22:%0A            nome = args%5B0%5D%0A            idade = int(args%5B1%5D)%0A            kid = Kid(nome, idade)%0A            pula.arrive(kid)%0A        elif command == %22enter%22:%0A            pula.enter()%0A        elif command == %22leave%22:%0A            pula.leave()%0A        elif command == %22remove%22:%0A            crianca = args%5B0%5D%0A            kid = Kid(crianca)%0A            pula.remove(kid)%0A%0Amain()\n",
             "lines": "24"
+        },
+        {
+            "label": "2025-11-15_13-05-15",
+            "content": "@@ -1102,15 +1102,20 @@\n e = \n+int(\n args%5B1%5D\n+)\n %0A   \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-06-15",
+            "content": "@@ -1079,9 +1079,9 @@\n rgs%5B\n-1\n+0\n %5D%0A  \n@@ -1107,9 +1107,9 @@\n rgs%5B\n-2\n+1\n %5D%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-12-15",
+            "content": "@@ -352,10 +352,8 @@\n end(\n-0,\n kid)\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-15-56",
+            "content": "@@ -348,16 +348,18 @@\n .append(\n+0,\n kid)%0A%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-16-36",
+            "content": "@@ -345,17 +345,15 @@\n ila.\n-insert(0,\n+append(\n kid)\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-19-17",
+            "content": "@@ -601,25 +601,23 @@\n lf.pula.\n-insert(0,\n+append(\n cld)%0A%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-20-37",
+            "content": "@@ -580,16 +580,17 @@\n ila.pop(\n+0\n )%0A      \n@@ -601,23 +601,25 @@\n lf.pula.\n-append(\n+insert(0,\n cld)%0A%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-23-21",
+            "content": "@@ -600,25 +600,23 @@\n lf.pula.\n-insert(0,\n+append(\n cld)%0A%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-24-06",
+            "content": "@@ -660,24 +660,25 @@\n lf.pula.pop(\n+0\n )%0A        se\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-24-57",
+            "content": "@@ -684,25 +684,23 @@\n lf.fila.\n-insert(0,\n+append(\n cld)%0A%0A  \n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-25-34",
+            "content": "@@ -1343,33 +1343,33 @@\n  crianca = args%5B\n-1\n+0\n %5D%0A            ki\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-30-59",
+            "content": "@@ -181,63 +181,8 @@\n de%7D%22\n-%0A    %0A    def getNome(self):%0A        return self.__nome\n %0A%0Acl\n@@ -719,20 +719,19 @@\n ve(self,\n-name\n+cld\n : str):%0A\n@@ -742,271 +742,35 @@\n     \n-for kid in self.fila:%0A            if kid.getNome() == name:%0A                self.fila.remove(kid)%0A                return%0A        for kid in self.pula:%0A            if kid.getNome() == name:%0A                self.pula.remove(kid)%0A                return%0A%0A            \n+cld = self.fila.remove(cld)\n %0A%0Ade\n@@ -1346,32 +1346,63 @@\n ianca = args%5B1%5D%0A\n+            kid = Kid(crianca)%0A\n             pula\n@@ -1409,23 +1409,19 @@\n .remove(\n-crianca\n+kid\n )%0A%0Amain(\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-15_13-47-32",
+            "content": "@@ -695,34 +695,8 @@\n f):%0A\n-        if self.pula:%0A    \n     \n@@ -717,28 +717,24 @@\n .pula.pop()%0A\n-    \n         self\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_13-53-45",
+            "content": "@@ -820,97 +820,8 @@\n r):%0A\n-        if name not in self.pula:%0A            print(%22fail:%7Bname%7D nao esta no pula-pula%22)%0A\n     \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-15_13-57-12",
+            "content": "@@ -820,28 +820,8 @@\n r):%0A\n-        nome = name%0A\n     \n@@ -828,17 +828,17 @@\n     if n\n-o\n+a\n me not i\n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-15_13-58-13",
+            "content": "@@ -836,16 +836,105 @@\n  = name%0A\n+        if nome not in self.pula:%0A            print(%22fail:%7Bname%7D nao esta no pula-pula%22)%0A\n         \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-11-15_13-58-39",
+            "content": "@@ -1098,97 +1098,8 @@\n urn%0A\n-        if nome not in self.pula:%0A            print(f%22fail:%7Bnome%7D n%C3%A3o esta no pula-pula%22)\n %0A   \n@@ -1107,16 +1107,17 @@\n         \n+%0A\n %0Adef mai\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-15_14-00-33",
+            "content": "@@ -1153,17 +1153,16 @@\n (f%22fail:\n- \n %7Bnome%7D n\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-15_14-00-56",
+            "content": "@@ -1162,17 +1162,17 @@\n %7Bnome%7D n\n-a\n+%C3%A3\n o esta n\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-15_14-01-07",
+            "content": "class Kid:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n\n    def __str__(self):\n        return f\"{self.__nome}:{self.__idade}\"\n    \n    def getNome(self):\n        return self.__nome\n\nclass Jump:\n    def __init__(self):\n        self.fila: list[Kid] = []\n        self.pula: list[Kid] = []\n        \n    def arrive(self, kid:Kid):\n        self.fila.insert(0,kid)\n\n    def __str__(self):\n        fila = \", \".join([str(x) for x in self.fila])\n        pula = \", \".join([str(x) for x in self.pula])\n        return f\"[{fila}] => [{pula}]\"\n    \n    def enter(self):\n        cld = self.fila.pop()\n        self.pula.insert(0,cld)\n\n    def leave(self):\n        if self.pula:\n            cld = self.pula.pop()\n            self.fila.insert(0,cld)\n\n    def remove(self,name: str):\n        nome = name\n        for kid in self.fila:\n            if kid.getNome() == name:\n                self.fila.remove(kid)\n                return\n        for kid in self.pula:\n            if kid.getNome() == name:\n                self.pula.remove(kid)\n                return\n        if nome not in self.pula:\n            print(f\"fail: {nome} nao esta no pula-pula\")\n            \ndef main():\n    pula = Jump()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n        command = args[0]\n\n        if command == \"end\":\n            break\n        elif command == \"show\":\n            print(pula)\n        elif command == \"arrive\":\n            nome = args[1]\n            idade = args[2]\n            kid = Kid(nome, idade)\n            pula.arrive(kid)\n        elif command == \"enter\":\n            pula.enter()\n        elif command == \"leave\":\n            pula.leave()\n        elif command == \"remove\":\n            crianca = args[1]\n            pula.remove(crianca)\n\nmain()",
+            "lines": "73"
         }
     ]
 }
