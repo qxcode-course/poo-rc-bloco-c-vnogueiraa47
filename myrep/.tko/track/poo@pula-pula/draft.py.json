@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-15_08-45-41",
+            "content": "class Kid:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n\n    def __str__(self):\n        return f\"{self.__nome}:{self.__idade}\"\n\nclass Jump:\n    def __init__(self):\n        self.fila: list[Kid] = []\n        self.pula: list[Kid] = []\n        \n    def arriver(self, kid:Kid):\n        self.fila.append(kid)\n\n    def __str__(self):\n        fila = \", \".join([str(x) for x in self.fila])\n        pula = \", \".join([str(x) for x in self.pula])\n        return f\"[{fila}] => [{pula}]\"\n    \n    def enter(self):\n        cld = self.fila.pop(0)\n        self.pula.append(cld)",
+            "lines": "24"
+        }
+    ]
+}
