@@ -23,57 +23,62 @@ class Theater:
         else:
             seats = " ".join([str(x) if x else "-" for x in self.__seats])
             return f"[{seats}]"
-    
-    def reserve(self, client: Client, index: int):
-            if index < 0 or index >= len(self.__seats):
-                print("fail: cadeira nao existe")
-                return
-            if self.__seats[index] is not None:
-                print("fail: cadeira ja esta ocupada")
-                return
-            if client in self.__seats:
-                
-                print("fail: cliente ja esta no cinema")
-                return
-            
-            self.__seats[index] = client
-    
-    
-    def cancel(self,client: Client):
-        if client not in self.__seats:
-            print("fail: cliente nao esta no cinema")
-            return
         
-        self.__seats.remove(client)
+    def getSeat(self):
+        return self.__seats
 
-def main():
-    cinema  = Theater(0)
+    
+    def __search(self, nome: int):
+        for i in range(len(self.__seats)):
+            if self.cadeiras[i] is not None:
+                if self.__seats[i].getId() == nome:
+                    return i
+        return -1
+    
+    def __verifyIndix(self, index: int):
+        if index < 0 or index >= len(self.__seats):
+            return False
+        
+        return True      
 
-    while True:
-        line = input()
-        print("$" + line)
-        args = line.split()
-        command = args[0]
-
-        if command == "end":
-            break
-        elif command == "init":
-            cinema = Theater(int(args[1]))
-        elif command == "show":
-            print(cinema)
-        elif command == "reserve":
-            id = args[1]
-            phone = args[2]
-            indice = int(args[3])
-            client = Client(id, phone)
-            cinema.reserve(client, indice)
-        elif command == "cancel":
-            client = args[1]
-            cinema.cancel(client)
-main()
+            
     
 
 
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     
 
