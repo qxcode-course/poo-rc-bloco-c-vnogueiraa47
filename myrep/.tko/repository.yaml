@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\Vinicius Nogueira\poo-rc-bloco-c-vnogueiraa47\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-18 00:47:07'
+  cache_timestamp: '2025-11-18 08:33:03'
   filters:
   - listas
 expanded:
@@ -21,8 +21,8 @@ expanded:
 tasks:
   poo@array: '{rate:100, human:SIM, guide:SIM, alone:10, study:40}'
   poo@budega: '{rate:100, iagen:SIM, guide:SIM, alone:10, study:180}'
-  poo@pula-pula: '{rate:100, guide:SIM, alone:10, study:180}'
-  poo@cinema: '{rate:66}'
+  poo@pula-pula: '{rate:100, guide:SIM, alone:8, study:180}'
+  poo@cinema: '{rate:100, iagen:SIM, guide:SIM, alone:6, study:240}'
 flags:
   quests: 2
   tracks: 0
@@ -30,4 +30,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@cinema
+selected: poo@pula-pula

@@ -30,7 +30,7 @@ class Theater:
     
     def __search(self, nome: int):
         for i in range(len(self.__seats)):
-            if self.cadeiras[i] is not None:
+            if self.__seats[i] is not None:
                 if self.__seats[i].getId() == nome:
                     return i
         return -1
@@ -40,6 +40,60 @@ class Theater:
             return False
         
         return True      
+
+    def reserve(self, id: str, cadeira: int,index: int):
+        if self.__verifyIndix(index) == False:
+            print("fail: cadeira nao existe")
+            return
+        if self.__search(id) != -1:
+            print("fail: cliente ja esta no cinema")
+            return
+        if self.__seats[index] is not None:
+            print("fail: cadeira ja esta ocupada")
+            return
+        client = Client(id, cadeira)
+        
+        self.__seats[index] = client
+    
+    def cancel(self, id: str):
+        if self.__search(id) == -1:
+            print("fail: cliente nao esta no cinema")
+            return
+        
+        self.__seats[self.__search(id)] = None
+
+def main():
+    cinema = Theater(0)
+
+    while True:
+        line = input()
+        print("$" + line)
+        args = line.split()
+        command = args[0]
+
+        if command == "end":
+            break
+
+        elif command == "init":
+            capacidade = int(args[1])
+            cinema = Theater(capacidade)
+
+        elif command == "show":
+            print(cinema)
+
+        elif command == "reserve":
+            id = args[1]
+            phone = int(args[2])
+            indice = int(args[3])
+            cinema.reserve(id, phone, indice)
+        
+        elif command == "cancel":
+            id = args[1]
+            cinema.cancel(id)
+
+main()
+
+
 
             
     
